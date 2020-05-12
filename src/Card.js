@@ -3,8 +3,6 @@ import store from './store';
 import './Card.css';
 
 function Card(props) {
-  console.log(props);
-
   return (
     <div className="Card" key={props.id}>
       <button type="button">delete</button>

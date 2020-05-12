@@ -1,9 +1,14 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+// import { render } from '@testing-library/react';
+import ReactDOM from 'react-dom';
+import renderer from 'react-test-renderer';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from './App';
+import store from './store';
+
+// smoke test
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App store={store}/>, div);
+  ReactDOM.unmountComponentAtNode(div);
 });
