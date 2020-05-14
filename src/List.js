@@ -6,7 +6,7 @@ function List(props) {
   let cards = [];
 
   props.cardIds.forEach((card, index) => {
-    cards.push(<Card key={index} id={card} />);
+    cards.push(<Card key={index} id={card} listId={props.id} deleteCard={props.deleteCard} allCards={props.allCards} />);
   });
 
   return (
@@ -16,7 +16,7 @@ function List(props) {
       </header>
       <div className="List-cards">
         {cards}
-        <button type="button" class="List-add-button">
+        <button type="button" className="List-add-button" onClick={() => props.addRandomCard(props.id)}>
           + Add Random Card
         </button>
       </div>
